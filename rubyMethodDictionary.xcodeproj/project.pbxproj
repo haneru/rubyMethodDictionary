@@ -1,0 +1,543 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		082919A61D29007A00F9E815 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919A51D29007A00F9E815 /* AppDelegate.swift */; };
+		082919A81D29007A00F9E815 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919A71D29007A00F9E815 /* ViewController.swift */; };
+		082919AB1D29007A00F9E815 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082919A91D29007A00F9E815 /* Main.storyboard */; };
+		082919AD1D29007A00F9E815 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 082919AC1D29007A00F9E815 /* Assets.xcassets */; };
+		082919B01D29007A00F9E815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 082919AE1D29007A00F9E815 /* LaunchScreen.storyboard */; };
+		082919BB1D29007A00F9E815 /* rubyMethodDictionaryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919BA1D29007A00F9E815 /* rubyMethodDictionaryTests.swift */; };
+		082919C61D29007A00F9E815 /* rubyMethodDictionaryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919C51D29007A00F9E815 /* rubyMethodDictionaryUITests.swift */; };
+		082919D41D29092500F9E815 /* choiceModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919D31D29092500F9E815 /* choiceModuleViewController.swift */; };
+		082919D61D29095000F9E815 /* choiceMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919D51D29095000F9E815 /* choiceMethodViewController.swift */; };
+		082919D81D29097900F9E815 /* BookMarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919D71D29097900F9E815 /* BookMarksViewController.swift */; };
+		082919DA1D29099A00F9E815 /* BookMarksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919D91D29099A00F9E815 /* BookMarksDetailViewController.swift */; };
+		082919DC1D2909DC00F9E815 /* MethodExplanetionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919DB1D2909DC00F9E815 /* MethodExplanetionViewController.swift */; };
+		082919E21D29F61700F9E815 /* json.txt in Resources */ = {isa = PBXBuildFile; fileRef = 082919E11D29F61700F9E815 /* json.txt */; };
+		082919E41D2A056200F9E815 /* Stringjson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 082919E31D2A056200F9E815 /* Stringjson.txt */; };
+		082919E61D2A058C00F9E815 /* Arrayjson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 082919E51D2A058C00F9E815 /* Arrayjson.txt */; };
+		082919E81D2A05D800F9E815 /* Hashjson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 082919E71D2A05D800F9E815 /* Hashjson.txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		082919B71D29007A00F9E815 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0829199A1D29007A00F9E815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 082919A11D29007A00F9E815;
+			remoteInfo = rubyMethodDictionary;
+		};
+		082919C21D29007A00F9E815 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0829199A1D29007A00F9E815 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 082919A11D29007A00F9E815;
+			remoteInfo = rubyMethodDictionary;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		082919A21D29007A00F9E815 /* rubyMethodDictionary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rubyMethodDictionary.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		082919A51D29007A00F9E815 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		082919A71D29007A00F9E815 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		082919AA1D29007A00F9E815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		082919AC1D29007A00F9E815 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		082919AF1D29007A00F9E815 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		082919B11D29007A00F9E815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		082919B61D29007A00F9E815 /* rubyMethodDictionaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rubyMethodDictionaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		082919BA1D29007A00F9E815 /* rubyMethodDictionaryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubyMethodDictionaryTests.swift; sourceTree = "<group>"; };
+		082919BC1D29007A00F9E815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		082919C11D29007A00F9E815 /* rubyMethodDictionaryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = rubyMethodDictionaryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		082919C51D29007A00F9E815 /* rubyMethodDictionaryUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rubyMethodDictionaryUITests.swift; sourceTree = "<group>"; };
+		082919C71D29007A00F9E815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		082919D31D29092500F9E815 /* choiceModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = choiceModuleViewController.swift; sourceTree = "<group>"; };
+		082919D51D29095000F9E815 /* choiceMethodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = choiceMethodViewController.swift; sourceTree = "<group>"; };
+		082919D71D29097900F9E815 /* BookMarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarksViewController.swift; sourceTree = "<group>"; };
+		082919D91D29099A00F9E815 /* BookMarksDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarksDetailViewController.swift; sourceTree = "<group>"; };
+		082919DB1D2909DC00F9E815 /* MethodExplanetionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodExplanetionViewController.swift; sourceTree = "<group>"; };
+		082919E11D29F61700F9E815 /* json.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json.txt; sourceTree = "<group>"; };
+		082919E31D2A056200F9E815 /* Stringjson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Stringjson.txt; sourceTree = "<group>"; };
+		082919E51D2A058C00F9E815 /* Arrayjson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Arrayjson.txt; sourceTree = "<group>"; };
+		082919E71D2A05D800F9E815 /* Hashjson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Hashjson.txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0829199F1D29007A00F9E815 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082919B31D29007A00F9E815 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082919BE1D29007A00F9E815 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		082919991D29007A00F9E815 = {
+			isa = PBXGroup;
+			children = (
+				082919A41D29007A00F9E815 /* rubyMethodDictionary */,
+				082919B91D29007A00F9E815 /* rubyMethodDictionaryTests */,
+				082919C41D29007A00F9E815 /* rubyMethodDictionaryUITests */,
+				082919A31D29007A00F9E815 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		082919A31D29007A00F9E815 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				082919A21D29007A00F9E815 /* rubyMethodDictionary.app */,
+				082919B61D29007A00F9E815 /* rubyMethodDictionaryTests.xctest */,
+				082919C11D29007A00F9E815 /* rubyMethodDictionaryUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		082919A41D29007A00F9E815 /* rubyMethodDictionary */ = {
+			isa = PBXGroup;
+			children = (
+				082919A51D29007A00F9E815 /* AppDelegate.swift */,
+				082919A71D29007A00F9E815 /* ViewController.swift */,
+				082919A91D29007A00F9E815 /* Main.storyboard */,
+				082919E51D2A058C00F9E815 /* Arrayjson.txt */,
+				082919E71D2A05D800F9E815 /* Hashjson.txt */,
+				082919E31D2A056200F9E815 /* Stringjson.txt */,
+				082919E11D29F61700F9E815 /* json.txt */,
+				082919DB1D2909DC00F9E815 /* MethodExplanetionViewController.swift */,
+				082919D91D29099A00F9E815 /* BookMarksDetailViewController.swift */,
+				082919D71D29097900F9E815 /* BookMarksViewController.swift */,
+				082919D51D29095000F9E815 /* choiceMethodViewController.swift */,
+				082919D31D29092500F9E815 /* choiceModuleViewController.swift */,
+				082919AC1D29007A00F9E815 /* Assets.xcassets */,
+				082919AE1D29007A00F9E815 /* LaunchScreen.storyboard */,
+				082919B11D29007A00F9E815 /* Info.plist */,
+			);
+			path = rubyMethodDictionary;
+			sourceTree = "<group>";
+		};
+		082919B91D29007A00F9E815 /* rubyMethodDictionaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				082919BA1D29007A00F9E815 /* rubyMethodDictionaryTests.swift */,
+				082919BC1D29007A00F9E815 /* Info.plist */,
+			);
+			path = rubyMethodDictionaryTests;
+			sourceTree = "<group>";
+		};
+		082919C41D29007A00F9E815 /* rubyMethodDictionaryUITests */ = {
+			isa = PBXGroup;
+			children = (
+				082919C51D29007A00F9E815 /* rubyMethodDictionaryUITests.swift */,
+				082919C71D29007A00F9E815 /* Info.plist */,
+			);
+			path = rubyMethodDictionaryUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		082919A11D29007A00F9E815 /* rubyMethodDictionary */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 082919CA1D29007A00F9E815 /* Build configuration list for PBXNativeTarget "rubyMethodDictionary" */;
+			buildPhases = (
+				0829199E1D29007A00F9E815 /* Sources */,
+				0829199F1D29007A00F9E815 /* Frameworks */,
+				082919A01D29007A00F9E815 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = rubyMethodDictionary;
+			productName = rubyMethodDictionary;
+			productReference = 082919A21D29007A00F9E815 /* rubyMethodDictionary.app */;
+			productType = "com.apple.product-type.application";
+		};
+		082919B51D29007A00F9E815 /* rubyMethodDictionaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 082919CD1D29007A00F9E815 /* Build configuration list for PBXNativeTarget "rubyMethodDictionaryTests" */;
+			buildPhases = (
+				082919B21D29007A00F9E815 /* Sources */,
+				082919B31D29007A00F9E815 /* Frameworks */,
+				082919B41D29007A00F9E815 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				082919B81D29007A00F9E815 /* PBXTargetDependency */,
+			);
+			name = rubyMethodDictionaryTests;
+			productName = rubyMethodDictionaryTests;
+			productReference = 082919B61D29007A00F9E815 /* rubyMethodDictionaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		082919C01D29007A00F9E815 /* rubyMethodDictionaryUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 082919D01D29007A00F9E815 /* Build configuration list for PBXNativeTarget "rubyMethodDictionaryUITests" */;
+			buildPhases = (
+				082919BD1D29007A00F9E815 /* Sources */,
+				082919BE1D29007A00F9E815 /* Frameworks */,
+				082919BF1D29007A00F9E815 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				082919C31D29007A00F9E815 /* PBXTargetDependency */,
+			);
+			name = rubyMethodDictionaryUITests;
+			productName = rubyMethodDictionaryUITests;
+			productReference = 082919C11D29007A00F9E815 /* rubyMethodDictionaryUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0829199A1D29007A00F9E815 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = haneru;
+				TargetAttributes = {
+					082919A11D29007A00F9E815 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					082919B51D29007A00F9E815 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 082919A11D29007A00F9E815;
+					};
+					082919C01D29007A00F9E815 = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = 082919A11D29007A00F9E815;
+					};
+				};
+			};
+			buildConfigurationList = 0829199D1D29007A00F9E815 /* Build configuration list for PBXProject "rubyMethodDictionary" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 082919991D29007A00F9E815;
+			productRefGroup = 082919A31D29007A00F9E815 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				082919A11D29007A00F9E815 /* rubyMethodDictionary */,
+				082919B51D29007A00F9E815 /* rubyMethodDictionaryTests */,
+				082919C01D29007A00F9E815 /* rubyMethodDictionaryUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		082919A01D29007A00F9E815 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082919E61D2A058C00F9E815 /* Arrayjson.txt in Resources */,
+				082919E81D2A05D800F9E815 /* Hashjson.txt in Resources */,
+				082919E41D2A056200F9E815 /* Stringjson.txt in Resources */,
+				082919B01D29007A00F9E815 /* LaunchScreen.storyboard in Resources */,
+				082919AD1D29007A00F9E815 /* Assets.xcassets in Resources */,
+				082919AB1D29007A00F9E815 /* Main.storyboard in Resources */,
+				082919E21D29F61700F9E815 /* json.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082919B41D29007A00F9E815 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082919BF1D29007A00F9E815 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0829199E1D29007A00F9E815 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082919D61D29095000F9E815 /* choiceMethodViewController.swift in Sources */,
+				082919DA1D29099A00F9E815 /* BookMarksDetailViewController.swift in Sources */,
+				082919A81D29007A00F9E815 /* ViewController.swift in Sources */,
+				082919A61D29007A00F9E815 /* AppDelegate.swift in Sources */,
+				082919D81D29097900F9E815 /* BookMarksViewController.swift in Sources */,
+				082919D41D29092500F9E815 /* choiceModuleViewController.swift in Sources */,
+				082919DC1D2909DC00F9E815 /* MethodExplanetionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082919B21D29007A00F9E815 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082919BB1D29007A00F9E815 /* rubyMethodDictionaryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		082919BD1D29007A00F9E815 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				082919C61D29007A00F9E815 /* rubyMethodDictionaryUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		082919B81D29007A00F9E815 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 082919A11D29007A00F9E815 /* rubyMethodDictionary */;
+			targetProxy = 082919B71D29007A00F9E815 /* PBXContainerItemProxy */;
+		};
+		082919C31D29007A00F9E815 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 082919A11D29007A00F9E815 /* rubyMethodDictionary */;
+			targetProxy = 082919C21D29007A00F9E815 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		082919A91D29007A00F9E815 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				082919AA1D29007A00F9E815 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		082919AE1D29007A00F9E815 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				082919AF1D29007A00F9E815 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		082919C81D29007A00F9E815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		082919C91D29007A00F9E815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		082919CB1D29007A00F9E815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = rubyMethodDictionary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haneru.rubyMethodDictionary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		082919CC1D29007A00F9E815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = rubyMethodDictionary/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haneru.rubyMethodDictionary;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		082919CE1D29007A00F9E815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = rubyMethodDictionaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haneru.rubyMethodDictionaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rubyMethodDictionary.app/rubyMethodDictionary";
+			};
+			name = Debug;
+		};
+		082919CF1D29007A00F9E815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = rubyMethodDictionaryTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haneru.rubyMethodDictionaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/rubyMethodDictionary.app/rubyMethodDictionary";
+			};
+			name = Release;
+		};
+		082919D11D29007A00F9E815 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = rubyMethodDictionaryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haneru.rubyMethodDictionaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = rubyMethodDictionary;
+			};
+			name = Debug;
+		};
+		082919D21D29007A00F9E815 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = rubyMethodDictionaryUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.haneru.rubyMethodDictionaryUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = rubyMethodDictionary;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0829199D1D29007A00F9E815 /* Build configuration list for PBXProject "rubyMethodDictionary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082919C81D29007A00F9E815 /* Debug */,
+				082919C91D29007A00F9E815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		082919CA1D29007A00F9E815 /* Build configuration list for PBXNativeTarget "rubyMethodDictionary" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082919CB1D29007A00F9E815 /* Debug */,
+				082919CC1D29007A00F9E815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		082919CD1D29007A00F9E815 /* Build configuration list for PBXNativeTarget "rubyMethodDictionaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082919CE1D29007A00F9E815 /* Debug */,
+				082919CF1D29007A00F9E815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		082919D01D29007A00F9E815 /* Build configuration list for PBXNativeTarget "rubyMethodDictionaryUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				082919D11D29007A00F9E815 /* Debug */,
+				082919D21D29007A00F9E815 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0829199A1D29007A00F9E815 /* Project object */;
+}
