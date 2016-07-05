@@ -1,1 +1,4 @@
-["join","each"]
+[
+{"class":"Array","name":"join","detail":"くっつけます"},
+{"class":"Array","name":"each","detail":"繰り返し"}
+]

@@ -12,6 +12,8 @@ class BookMarksViewController: UIViewController,UITableViewDelegate,UITableViewD
 
     var bookMarkList = [["class":"","name":"","detail":""]]
     
+    var selectedIndex = -1
+    
     @IBOutlet weak var BookMarksTableView: UITableView!
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
@@ -25,7 +27,7 @@ class BookMarksViewController: UIViewController,UITableViewDelegate,UITableViewD
         if myDefault.objectForKey("bookMarkList") != nil{
             bookMarkList = myDefault.objectForKey("bookMarkList")as! [Dictionary]
         }
-        //  myDefault.removePersistentDomainForName(addDomain)
+//          myDefault.removePersistentDomainForName(addDomain)
         BookMarksTableView.reloadData()
         
     }
@@ -41,8 +43,19 @@ class BookMarksViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedIndex = indexPath.row
         if bookMarkList[indexPath.row]["class"] != "" && bookMarkList[indexPath.row]["name"] != ""{
         performSegueWithIdentifier("bookmarkMethodSegue", sender: nil)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "bookmarkMethodSegue" {
+            var BookMarkDetailVC = segue.destinationViewController as! BookMarksDetailViewController
+            BookMarkDetailVC.methodClass = bookMarkList[selectedIndex]["class"] as! String!
+            BookMarkDetailVC.methodName = bookMarkList[selectedIndex]["name"] as! String!
+            BookMarkDetailVC.methodText = bookMarkList[selectedIndex]["detail"]
+                as! String!
         }
     }
 

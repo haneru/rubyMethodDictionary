@@ -24,6 +24,9 @@ class MethodExplanetionViewController: UIViewController {
     
     override func viewDidLoad() {
     }
+    @IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewDidLoad()
@@ -50,7 +53,7 @@ class MethodExplanetionViewController: UIViewController {
             //        UserDefaultに保存
             var myDefault = NSUserDefaults.standardUserDefaults()
             //        データを書き込んで
-            myDefault.setObject(self.bookMarkList, forKey: "diaryList")
+            myDefault.setObject(self.bookMarkList, forKey: "bookMarkList")
             //        即反映させる
             myDefault.synchronize()
 

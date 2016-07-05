@@ -1,1 +1,3 @@
-["split","chop"]
+[{"class":"String","name":"split","detail":"配列にする"},
+{"class":"String","name":"to_i","detail":"String型からInteger型に"}
+]

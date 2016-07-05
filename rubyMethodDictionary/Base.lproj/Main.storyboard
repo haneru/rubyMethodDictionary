@@ -141,12 +141,22 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="5oe-5d-GXI" appends="YES" id="uht-iq-PXP"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="quesLabel" destination="on1-G2-dVo" id="43J-k8-2oT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mFk-f8-1n7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="5oe-5d-GXI">
+                    <connections>
+                        <action selector="swipeRight:" destination="dpW-ol-Whh" id="Vem-kt-Lfx"/>
+                        <outlet property="delegate" destination="dpW-ol-Whh" id="0c1-Of-4Lg"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3083" y="429"/>
         </scene>
@@ -184,6 +194,10 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="OQr-Zl-0hB" appends="YES" id="0yO-Hv-dYj"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="detailText" destination="UAg-8q-czJ" id="hoA-Ot-46i"/>
@@ -191,6 +205,12 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oyI-Zj-LXe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="OQr-Zl-0hB">
+                    <connections>
+                        <action selector="swipeRight:" destination="las-9m-Fu1" id="Yx5-GM-Yw9"/>
+                        <outlet property="delegate" destination="las-9m-Fu1" id="E2Z-s2-ARS"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3662" y="429"/>
         </scene>
@@ -276,23 +296,37 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XC-Gh-ep7">
-                                <rect key="frame" x="186" y="182" width="42" height="21"/>
+                                <rect key="frame" x="186" y="183" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hM8-qg-0uG">
-                                <rect key="frame" x="87" y="241" width="240" height="438"/>
+                                <rect key="frame" x="87" y="242" width="240" height="438"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="JE4-Du-m5A" appends="YES" id="Cnk-s8-JJm"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="detailText" destination="hM8-qg-0uG" id="Lxv-5w-e3P"/>
+                        <outlet property="titleLabel" destination="2XC-Gh-ep7" id="PfX-DJ-0SS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Epz-M8-Loa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="JE4-Du-m5A">
+                    <connections>
+                        <action selector="swipeRigjt:" destination="b2K-iY-cYK" id="4e3-vF-eaa"/>
+                        <outlet property="delegate" destination="b2K-iY-cYK" id="oe2-mZ-NpK"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3039" y="1387"/>
         </scene>

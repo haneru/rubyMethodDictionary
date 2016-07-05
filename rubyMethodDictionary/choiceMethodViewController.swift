@@ -23,6 +23,9 @@ class choiceMethodViewController: UIViewController ,UITableViewDelegate,UITableV
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     override func viewWillAppear(animated: Bool) {
         var path = NSBundle.mainBundle().pathForResource("\(className)json", ofType: "txt")

@@ -10,9 +10,23 @@ import UIKit
 
 class BookMarksDetailViewController: UIViewController {
 
+    var methodClass:String!
+    
+    var methodName:String!
+    
+    var methodText:String!
+    
+    @IBOutlet weak var detailText: UITextView!
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        titleLabel.text = methodName
+        
+        detailText.text = methodText
+        
         // Do any additional setup after loading the view.
     }
 
@@ -21,7 +35,11 @@ class BookMarksDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    @IBAction func swipeRigjt(sender: UISwipeGestureRecognizer) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
