@@ -10,6 +10,8 @@ import UIKit
 
 class choiceMethodViewController: UIViewController ,UITableViewDelegate,UITableViewDataSource{
     
+    var selectedIndex = -1
+    
     var className: String!
     
     var methodArray = []
@@ -36,11 +38,12 @@ class choiceMethodViewController: UIViewController ,UITableViewDelegate,UITableV
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
-        cell.textLabel!.text = "\(methodArray[indexPath.row])"
+        cell.textLabel!.text = "\(methodArray[indexPath.row]["name"] as! String )"
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        selectedIndex = indexPath.row
         performSegueWithIdentifier("DetailSegue", sender: nil)
     }
 
@@ -49,6 +52,15 @@ class choiceMethodViewController: UIViewController ,UITableViewDelegate,UITableV
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "DetailSegue" {
+            var MethodExVC = segue.destinationViewController as! MethodExplanetionViewController
+            MethodExVC.methodClass = methodArray[selectedIndex]["class"] as! String
+            MethodExVC.methodName = methodArray[selectedIndex]["name"] as! String
+            MethodExVC.methodText = methodArray[selectedIndex]["detail"]
+            as! String
+        }
+    }
 
     /*
     // MARK: - Navigation

@@ -1,1 +1,4 @@
-["delete","sort"]
+[
+{"class":"Hash","name":"delete","detail":"abebe"},
+{"class":"Hash","name":"sort","detail":"並べるよ"}
+]

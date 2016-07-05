@@ -10,12 +10,62 @@ import UIKit
 
 class MethodExplanetionViewController: UIViewController {
 
+    var methodClass:String!
+    
+    var methodName:String!
+    
+    var methodText:String!
+    
+    var bookMarkList = [["class":"","name":"","detail":""]]
+    
+    @IBOutlet weak var nameLavel: UILabel!
+    
+    @IBOutlet weak var detailText: UITextView!
+    
     override func viewDidLoad() {
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         super.viewDidLoad()
-
+        nameLavel.text = methodName
+        detailText.text = methodText
+        var addDomain:String = NSBundle.mainBundle().bundleIdentifier!
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        if myDefault.objectForKey("bookMarkList") != nil{
+            bookMarkList = myDefault.objectForKey("bookMarkList")as! [Dictionary]
+            
+            //  myDefault.removePersistentDomainForName(addDomain)
+        }
         // Do any additional setup after loading the view.
     }
+    
+    @IBAction func bookBtn(sender: UIButton) {
+        let alert: UIAlertController = UIAlertController(title: "BookMark", message: "保存してもいいですか？", preferredStyle:  UIAlertControllerStyle.Alert)
+        
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+            (action: UIAlertAction!) -> Void in
+            self.bookMarkList.append(["class":self.methodClass,"name":self.methodName,"detail":self.methodText])
+            print(self.bookMarkList)
+            //        UserDefaultに保存
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            //        データを書き込んで
+            myDefault.setObject(self.bookMarkList, forKey: "diaryList")
+            //        即反映させる
+            myDefault.synchronize()
 
+        })
+        // キャンセルボタン
+        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.Cancel, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("Cancel")
+        })
+        
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

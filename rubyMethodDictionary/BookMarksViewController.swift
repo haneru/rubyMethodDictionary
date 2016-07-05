@@ -10,24 +10,40 @@ import UIKit
 
 class BookMarksViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
+    var bookMarkList = [["class":"","name":"","detail":""]]
+    
+    @IBOutlet weak var BookMarksTableView: UITableView!
     override func viewDidLoad() {
-        super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewDidLoad()
+        var addDomain:String = NSBundle.mainBundle().bundleIdentifier!
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        if myDefault.objectForKey("bookMarkList") != nil{
+            bookMarkList = myDefault.objectForKey("bookMarkList")as! [Dictionary]
+        }
+        //  myDefault.removePersistentDomainForName(addDomain)
+        BookMarksTableView.reloadData()
+        
+    }
+    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return bookMarkList.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
-        cell.textLabel!.text = "\(indexPath.row)"
+        cell.textLabel!.text = "Class:\(bookMarkList[indexPath.row]["class"] as! String!),Method:\(bookMarkList[indexPath.row]["name"] as! String!)"
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if bookMarkList[indexPath.row]["class"] != "" && bookMarkList[indexPath.row]["name"] != ""{
         performSegueWithIdentifier("bookmarkMethodSegue", sender: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
