@@ -59,7 +59,7 @@ class MethodExplanetionViewController: UIViewController {
 
         })
         // キャンセルボタン
-        let cancelAction: UIAlertAction = UIAlertAction(title: "キャンセル", style: UIAlertActionStyle.Cancel, handler:{
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:{
             (action: UIAlertAction!) -> Void in
             print("Cancel")
         })
