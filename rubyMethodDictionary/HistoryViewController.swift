@@ -30,6 +30,33 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         HistoryList = HistoryList.reverse()
         HistoryTableView.reloadData()
     }
+    @IBAction func AllDeleteBtn(sender: UIButton) {
+        let alert: UIAlertController = UIAlertController(title: "AllDelete", message: "全部をHistoryから削除しますか？", preferredStyle:  UIAlertControllerStyle.Alert)
+        
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+            (action: UIAlertAction!) -> Void in
+            self.HistoryList = [["class":"","name":"","detail":""]]
+            //        UserDefaultに保存
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            //        データを書き込んで
+            myDefault.setObject(self.HistoryList, forKey: "HistoryList")
+            //        即反映させる
+            myDefault.synchronize()
+            
+            self.HistoryTableView.reloadData()
+        })
+        // キャンセルボタン
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("Cancel")
+        })
+        
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+    
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return HistoryList.count
