@@ -18,6 +18,32 @@ class BookMarksViewController: UIViewController,UITableViewDelegate,UITableViewD
     override func viewDidLoad() {
         // Do any additional setup after loading the view.
     }
+    @IBAction func allDelete(sender: UIButton) {
+        let alert: UIAlertController = UIAlertController(title: "AllDelete", message: "全部お気に入りから削除しますか？？", preferredStyle:  UIAlertControllerStyle.Alert)
+        
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+            (action: UIAlertAction!) -> Void in
+            self.bookMarkList = [["class":"","name":"","detail":""]]
+            //        UserDefaultに保存
+            var myDefault = NSUserDefaults.standardUserDefaults()
+            //        データを書き込んで
+            myDefault.setObject(self.bookMarkList, forKey: "bookMarkList")
+            //        即反映させる
+            myDefault.synchronize()
+            
+            self.BookMarksTableView.reloadData()
+        })
+        // キャンセルボタン
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:{
+            (action: UIAlertAction!) -> Void in
+            print("Cancel")
+        })
+        
+        alert.addAction(cancelAction)
+        alert.addAction(defaultAction)
+        
+        presentViewController(alert, animated: true, completion: nil)
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewDidLoad()
@@ -51,7 +77,7 @@ class BookMarksViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "bookmarkMethodSegue" {
-            var BookMarkDetailVC = segue.destinationViewController as! BookMarksDetailViewController
+            var BookMarkDetailVC = segue.destinationViewController as! MethodExplanetionViewController
             BookMarkDetailVC.methodClass = bookMarkList[selectedIndex]["class"] as! String!
             BookMarkDetailVC.methodName = bookMarkList[selectedIndex]["name"] as! String!
             BookMarkDetailVC.methodText = bookMarkList[selectedIndex]["detail"]

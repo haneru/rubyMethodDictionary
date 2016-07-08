@@ -17,12 +17,13 @@
 		082919D41D29092500F9E815 /* choiceModuleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919D31D29092500F9E815 /* choiceModuleViewController.swift */; };
 		082919D61D29095000F9E815 /* choiceMethodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919D51D29095000F9E815 /* choiceMethodViewController.swift */; };
 		082919D81D29097900F9E815 /* BookMarksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919D71D29097900F9E815 /* BookMarksViewController.swift */; };
-		082919DA1D29099A00F9E815 /* BookMarksDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919D91D29099A00F9E815 /* BookMarksDetailViewController.swift */; };
 		082919DC1D2909DC00F9E815 /* MethodExplanetionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919DB1D2909DC00F9E815 /* MethodExplanetionViewController.swift */; };
 		082919E21D29F61700F9E815 /* json.txt in Resources */ = {isa = PBXBuildFile; fileRef = 082919E11D29F61700F9E815 /* json.txt */; };
 		082919E41D2A056200F9E815 /* Stringjson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 082919E31D2A056200F9E815 /* Stringjson.txt */; };
 		082919E61D2A058C00F9E815 /* Arrayjson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 082919E51D2A058C00F9E815 /* Arrayjson.txt */; };
 		082919E81D2A05D800F9E815 /* Hashjson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 082919E71D2A05D800F9E815 /* Hashjson.txt */; };
+		082919F01D2CA69700F9E815 /* Star Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 082919EF1D2CA69700F9E815 /* Star Filled-50.png */; };
+		082919F21D2CA6A000F9E815 /* Star-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 082919F11D2CA6A000F9E815 /* Star-50.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,12 +60,13 @@
 		082919D31D29092500F9E815 /* choiceModuleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = choiceModuleViewController.swift; sourceTree = "<group>"; };
 		082919D51D29095000F9E815 /* choiceMethodViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = choiceMethodViewController.swift; sourceTree = "<group>"; };
 		082919D71D29097900F9E815 /* BookMarksViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarksViewController.swift; sourceTree = "<group>"; };
-		082919D91D29099A00F9E815 /* BookMarksDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookMarksDetailViewController.swift; sourceTree = "<group>"; };
 		082919DB1D2909DC00F9E815 /* MethodExplanetionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MethodExplanetionViewController.swift; sourceTree = "<group>"; };
 		082919E11D29F61700F9E815 /* json.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = json.txt; sourceTree = "<group>"; };
 		082919E31D2A056200F9E815 /* Stringjson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Stringjson.txt; sourceTree = "<group>"; };
 		082919E51D2A058C00F9E815 /* Arrayjson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Arrayjson.txt; sourceTree = "<group>"; };
 		082919E71D2A05D800F9E815 /* Hashjson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Hashjson.txt; sourceTree = "<group>"; };
+		082919EF1D2CA69700F9E815 /* Star Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star Filled-50.png"; sourceTree = "<group>"; };
+		082919F11D2CA6A000F9E815 /* Star-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star-50.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,12 +120,13 @@
 				082919A51D29007A00F9E815 /* AppDelegate.swift */,
 				082919A71D29007A00F9E815 /* ViewController.swift */,
 				082919A91D29007A00F9E815 /* Main.storyboard */,
+				082919F11D2CA6A000F9E815 /* Star-50.png */,
+				082919EF1D2CA69700F9E815 /* Star Filled-50.png */,
 				082919E51D2A058C00F9E815 /* Arrayjson.txt */,
 				082919E71D2A05D800F9E815 /* Hashjson.txt */,
 				082919E31D2A056200F9E815 /* Stringjson.txt */,
 				082919E11D29F61700F9E815 /* json.txt */,
 				082919DB1D2909DC00F9E815 /* MethodExplanetionViewController.swift */,
-				082919D91D29099A00F9E815 /* BookMarksDetailViewController.swift */,
 				082919D71D29097900F9E815 /* BookMarksViewController.swift */,
 				082919D51D29095000F9E815 /* choiceMethodViewController.swift */,
 				082919D31D29092500F9E815 /* choiceModuleViewController.swift */,
@@ -258,11 +261,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				082919E61D2A058C00F9E815 /* Arrayjson.txt in Resources */,
+				082919F01D2CA69700F9E815 /* Star Filled-50.png in Resources */,
 				082919E81D2A05D800F9E815 /* Hashjson.txt in Resources */,
 				082919E41D2A056200F9E815 /* Stringjson.txt in Resources */,
 				082919B01D29007A00F9E815 /* LaunchScreen.storyboard in Resources */,
 				082919AD1D29007A00F9E815 /* Assets.xcassets in Resources */,
 				082919AB1D29007A00F9E815 /* Main.storyboard in Resources */,
+				082919F21D2CA6A000F9E815 /* Star-50.png in Resources */,
 				082919E21D29F61700F9E815 /* json.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,7 +294,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				082919D61D29095000F9E815 /* choiceMethodViewController.swift in Sources */,
-				082919DA1D29099A00F9E815 /* BookMarksDetailViewController.swift in Sources */,
 				082919A81D29007A00F9E815 /* ViewController.swift in Sources */,
 				082919A61D29007A00F9E815 /* AppDelegate.swift in Sources */,
 				082919D81D29097900F9E815 /* BookMarksViewController.swift in Sources */,

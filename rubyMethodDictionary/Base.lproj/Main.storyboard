@@ -64,6 +64,7 @@
                             <constraint firstItem="1xp-T1-JFD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="e7g-hC-kLA"/>
                             <constraint firstItem="Qq9-Fb-0fi" firstAttribute="centerX" secondItem="1xp-T1-JFD" secondAttribute="centerX" id="fqt-4Z-xW9"/>
                             <constraint firstItem="pIS-2q-1eh" firstAttribute="leading" secondItem="Qq9-Fb-0fi" secondAttribute="leading" id="hdE-ib-2Cq"/>
+                            <constraint firstItem="cnT-xI-ncu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="iI6-c4-4j2"/>
                             <constraint firstItem="Qq9-Fb-0fi" firstAttribute="top" secondItem="pIS-2q-1eh" secondAttribute="bottom" constant="22" id="xOE-gx-VES"/>
                             <constraint firstItem="cnT-xI-ncu" firstAttribute="trailing" secondItem="pIS-2q-1eh" secondAttribute="trailing" id="xjh-d4-ZMD"/>
                             <constraint firstItem="pIS-2q-1eh" firstAttribute="trailing" secondItem="Qq9-Fb-0fi" secondAttribute="trailing" id="yVu-6N-md2"/>
@@ -214,19 +215,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyS-Qu-YsU">
-                                <rect key="frame" x="230" y="155" width="70" height="30"/>
-                                <state key="normal" title="BookMark"/>
-                                <connections>
-                                    <action selector="bookBtn:" destination="las-9m-Fu1" eventType="touchUpInside" id="uql-8C-3Ma"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwG-KO-y88">
-                                <rect key="frame" x="28" y="103" width="273" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UAg-8q-czJ">
                                 <rect key="frame" x="46" y="202" width="236" height="309"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -234,17 +222,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WwG-KO-y88">
+                                <rect key="frame" x="28" y="103" width="273" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AEf-0o-TB4">
+                                <rect key="frame" x="218" y="132" width="64" height="61"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="zQh-KA-wlz" appends="YES" id="ncg-23-neO"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="AEf-0o-TB4" firstAttribute="top" secondItem="WwG-KO-y88" secondAttribute="bottom" constant="10" id="5Ep-xQ-izd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="AEf-0o-TB4" secondAttribute="trailing" constant="18" id="6yu-Ah-axz"/>
+                            <constraint firstItem="UAg-8q-czJ" firstAttribute="top" secondItem="AEf-0o-TB4" secondAttribute="bottom" constant="10" id="9vb-j2-29w"/>
                             <constraint firstItem="WwG-KO-y88" firstAttribute="top" secondItem="r3e-nU-0w7" secondAttribute="bottom" constant="35" id="FP8-bE-Jcg"/>
-                            <constraint firstItem="iyS-Qu-YsU" firstAttribute="top" secondItem="WwG-KO-y88" secondAttribute="bottom" constant="35" id="M2G-1o-AzO"/>
                             <constraint firstItem="WwG-KO-y88" firstAttribute="leading" secondItem="Mrb-Xu-LRd" secondAttribute="leadingMargin" id="PgH-NI-Nvp"/>
-                            <constraint firstItem="iyS-Qu-YsU" firstAttribute="trailing" secondItem="Mrb-Xu-LRd" secondAttribute="trailingMargin" id="WDd-O2-vfG"/>
-                            <constraint firstItem="iyS-Qu-YsU" firstAttribute="top" secondItem="WwG-KO-y88" secondAttribute="bottom" constant="17" id="g3V-Pc-N8Z"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WwG-KO-y88" secondAttribute="trailing" id="gog-wL-80C"/>
-                            <constraint firstItem="UAg-8q-czJ" firstAttribute="top" secondItem="iyS-Qu-YsU" secondAttribute="bottom" constant="17" id="qtf-gZ-yAC"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="OQr-Zl-0hB" appends="YES" id="0yO-Hv-dYj"/>
@@ -252,6 +252,7 @@
                     </view>
                     <connections>
                         <outlet property="detailText" destination="UAg-8q-czJ" id="hoA-Ot-46i"/>
+                        <outlet property="favoriteImage" destination="AEf-0o-TB4" id="VlQ-DM-8HY"/>
                         <outlet property="nameLavel" destination="WwG-KO-y88" id="fO4-dw-ReH"/>
                     </connections>
                 </viewController>
@@ -262,8 +263,14 @@
                         <outlet property="delegate" destination="las-9m-Fu1" id="E2Z-s2-ARS"/>
                     </connections>
                 </swipeGestureRecognizer>
+                <tapGestureRecognizer id="zQh-KA-wlz">
+                    <connections>
+                        <action selector="tapFavorite:" destination="las-9m-Fu1" id="nEG-yM-dXP"/>
+                        <outlet property="delegate" destination="las-9m-Fu1" id="PX7-OV-SKv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3662" y="429"/>
+            <point key="canvasLocation" x="3083" y="1387"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ao8-qg-K8g">
@@ -307,7 +314,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="b2K-iY-cYK" kind="show" identifier="bookmarkMethodSegue" id="arK-ya-v3U"/>
+                                            <segue destination="las-9m-Fu1" kind="show" identifier="bookmarkMethodSegue" id="kSM-H2-Cz3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -316,6 +323,13 @@
                                     <outlet property="delegate" destination="CC2-fj-nie" id="kWh-WW-44m"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOS-2Q-f3c">
+                                <rect key="frame" x="246" y="96" width="62" height="30"/>
+                                <state key="normal" title="AllDelete"/>
+                                <connections>
+                                    <action selector="allDelete:" destination="CC2-fj-nie" eventType="touchUpInside" id="vOb-G7-djD"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="BookMarks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjh-2i-ICN">
                                 <rect key="frame" x="117" y="95" width="86" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -341,62 +355,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Obf-Fb-Pnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2472" y="1387"/>
-        </scene>
-        <!--Book Marks Detail View Controller-->
-        <scene sceneID="jTW-AX-rWF">
-            <objects>
-                <viewController id="b2K-iY-cYK" customClass="BookMarksDetailViewController" customModule="rubyMethodDictionary" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="PXB-Lj-vPG"/>
-                        <viewControllerLayoutGuide type="bottom" id="8pt-XV-oSp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yNN-8L-yJW">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hM8-qg-0uG">
-                                <rect key="frame" x="41" y="178" width="238" height="333"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XC-Gh-ep7">
-                                <rect key="frame" x="41" y="110" width="238" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <constraints>
-                            <constraint firstItem="hM8-qg-0uG" firstAttribute="top" secondItem="2XC-Gh-ep7" secondAttribute="bottom" constant="40" id="1bZ-82-ePL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hM8-qg-0uG" secondAttribute="trailing" constant="20" id="7gN-Rz-Mn6"/>
-                            <constraint firstItem="hM8-qg-0uG" firstAttribute="leading" secondItem="yNN-8L-yJW" secondAttribute="leadingMargin" constant="20" id="DuH-aq-wMY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="2XC-Gh-ep7" secondAttribute="trailing" constant="20" id="OFi-j4-Db5"/>
-                            <constraint firstItem="2XC-Gh-ep7" firstAttribute="top" secondItem="PXB-Lj-vPG" secondAttribute="bottom" constant="40" id="c8M-eE-Gtb"/>
-                            <constraint firstItem="8pt-XV-oSp" firstAttribute="top" secondItem="hM8-qg-0uG" secondAttribute="bottom" id="etn-93-MQc"/>
-                            <constraint firstItem="2XC-Gh-ep7" firstAttribute="leading" secondItem="yNN-8L-yJW" secondAttribute="leadingMargin" constant="20" id="wDe-99-xzo"/>
-                        </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="JE4-Du-m5A" appends="YES" id="Cnk-s8-JJm"/>
-                        </connections>
-                    </view>
-                    <connections>
-                        <outlet property="detailText" destination="hM8-qg-0uG" id="Lxv-5w-e3P"/>
-                        <outlet property="titleLabel" destination="2XC-Gh-ep7" id="PfX-DJ-0SS"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Epz-M8-Loa" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <swipeGestureRecognizer direction="right" id="JE4-Du-m5A">
-                    <connections>
-                        <action selector="swipeRigjt:" destination="b2K-iY-cYK" id="4e3-vF-eaa"/>
-                        <outlet property="delegate" destination="b2K-iY-cYK" id="oe2-mZ-NpK"/>
-                    </connections>
-                </swipeGestureRecognizer>
-            </objects>
-            <point key="canvasLocation" x="3083" y="1387"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jfi-u7-qvi">
@@ -437,4 +395,7 @@
             <point key="canvasLocation" x="1846" y="1387"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kSM-H2-Cz3"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -22,14 +22,16 @@ class MethodExplanetionViewController: UIViewController {
     
     @IBOutlet weak var detailText: UITextView!
     
+    @IBOutlet weak var favoriteImage: UIImageView!
     override func viewDidLoad() {
+        super.viewDidLoad()
     }
     @IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        navigationController?.popViewControllerAnimated(true)
     }
     
+    
     override func viewWillAppear(animated: Bool) {
-        super.viewDidLoad()
         nameLavel.text = methodName
         detailText.text = methodText
         var addDomain:String = NSBundle.mainBundle().bundleIdentifier!
@@ -37,37 +39,42 @@ class MethodExplanetionViewController: UIViewController {
         var myDefault = NSUserDefaults.standardUserDefaults()
         if myDefault.objectForKey("bookMarkList") != nil{
             bookMarkList = myDefault.objectForKey("bookMarkList")as! [Dictionary]
-            
-            //  myDefault.removePersistentDomainForName(addDomain)
+//            myDefault.removePersistentDomainForName(addDomain)
         }
+    
+        for value in bookMarkList {
+            if value == ["class":self.methodClass,"name":self.methodName,"detail":self.methodText] {
+                favoriteImage.image = UIImage(named: "Star Filled-50.png")
+                break
+            }else{
+            favoriteImage.image = UIImage(named: "Star-50.png")
+            }
+        }
+        
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func bookBtn(sender: UIButton) {
-        let alert: UIAlertController = UIAlertController(title: "BookMark", message: "保存してもいいですか？", preferredStyle:  UIAlertControllerStyle.Alert)
-        
-        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
-            (action: UIAlertAction!) -> Void in
+    @IBAction func tapFavorite(sender: UITapGestureRecognizer) {
+        if self.favoriteImage.image == UIImage(named: "Star-50.png"){
             self.bookMarkList.append(["class":self.methodClass,"name":self.methodName,"detail":self.methodText])
-            print(self.bookMarkList)
-            //        UserDefaultに保存
-            var myDefault = NSUserDefaults.standardUserDefaults()
-            //        データを書き込んで
-            myDefault.setObject(self.bookMarkList, forKey: "bookMarkList")
-            //        即反映させる
-            myDefault.synchronize()
-
-        })
-        // キャンセルボタン
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:{
-            (action: UIAlertAction!) -> Void in
-            print("Cancel")
-        })
-        
-        alert.addAction(cancelAction)
-        alert.addAction(defaultAction)
-        
-        presentViewController(alert, animated: true, completion: nil)
+            favoriteImage.image = UIImage(named: "Star Filled-50.png")
+        }else{
+            self.favoriteImage.image = UIImage(named: "Star-50.png")
+            var i = 0
+            for value in self.bookMarkList{
+                if value == ["class":"\(methodClass)","name":"\(methodName)","detail":"\(methodText)"]{
+                    self.bookMarkList.removeAtIndex(i)
+                    break
+                }
+                i += 1
+            }
+        }
+        print(self.bookMarkList)
+        //        UserDefaultに保存
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        //        データを書き込んで
+        myDefault.setObject(self.bookMarkList, forKey: "bookMarkList")
+        //        即反映させる
+        myDefault.synchronize()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
