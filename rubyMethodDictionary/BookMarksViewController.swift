@@ -19,7 +19,7 @@ class BookMarksViewController: UIViewController,UITableViewDelegate,UITableViewD
         // Do any additional setup after loading the view.
     }
     @IBAction func allDelete(sender: UIButton) {
-        let alert: UIAlertController = UIAlertController(title: "AllDelete", message: "全部お気に入りから削除しますか？？", preferredStyle:  UIAlertControllerStyle.Alert)
+        let alert: UIAlertController = UIAlertController(title: "AllDelete", message: "全部をBookMarkから削除しますか？？", preferredStyle:  UIAlertControllerStyle.Alert)
         
         let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
             (action: UIAlertAction!) -> Void in

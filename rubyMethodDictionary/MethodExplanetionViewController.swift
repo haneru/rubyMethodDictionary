@@ -18,6 +18,8 @@ class MethodExplanetionViewController: UIViewController {
     
     var bookMarkList = [["class":"","name":"","detail":""]]
     
+    var HistoryList = [["class":"","name":"","detail":""]]
+    
     @IBOutlet weak var nameLavel: UILabel!
     
     @IBOutlet weak var detailText: UITextView!
@@ -25,6 +27,16 @@ class MethodExplanetionViewController: UIViewController {
     @IBOutlet weak var favoriteImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        var addDomain:String = NSBundle.mainBundle().bundleIdentifier!
+        
+        var myDefault = NSUserDefaults.standardUserDefaults()
+        
+        HistoryList = myDefault.objectForKey("HistoryList")as! [Dictionary]
+        
+        HistoryList.append(["class":methodClass,"name":methodName,"detail":methodText])
+        myDefault.setObject(self.HistoryList, forKey: "HistoryList")
+        myDefault.synchronize()
+            
     }
     @IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
         navigationController?.popViewControllerAnimated(true)
@@ -37,6 +49,9 @@ class MethodExplanetionViewController: UIViewController {
         var addDomain:String = NSBundle.mainBundle().bundleIdentifier!
         
         var myDefault = NSUserDefaults.standardUserDefaults()
+        
+        
+
         if myDefault.objectForKey("bookMarkList") != nil{
             bookMarkList = myDefault.objectForKey("bookMarkList")as! [Dictionary]
 //            myDefault.removePersistentDomainForName(addDomain)
@@ -68,7 +83,7 @@ class MethodExplanetionViewController: UIViewController {
                 i += 1
             }
         }
-        print(self.bookMarkList)
+//        print(self.bookMarkList)
         //        UserDefaultに保存
         var myDefault = NSUserDefaults.standardUserDefaults()
         //        データを書き込んで

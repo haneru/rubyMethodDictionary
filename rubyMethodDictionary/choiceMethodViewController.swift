@@ -24,7 +24,7 @@ class choiceMethodViewController: UIViewController ,UITableViewDelegate,UITableV
         // Do any additional setup after loading the view.
     }
     @IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+        navigationController?.popViewControllerAnimated(true)
     }
     
     override func viewWillAppear(animated: Bool) {

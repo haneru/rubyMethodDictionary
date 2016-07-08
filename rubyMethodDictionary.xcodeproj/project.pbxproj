@@ -24,6 +24,7 @@
 		082919E81D2A05D800F9E815 /* Hashjson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 082919E71D2A05D800F9E815 /* Hashjson.txt */; };
 		082919F01D2CA69700F9E815 /* Star Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 082919EF1D2CA69700F9E815 /* Star Filled-50.png */; };
 		082919F21D2CA6A000F9E815 /* Star-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 082919F11D2CA6A000F9E815 /* Star-50.png */; };
+		082919F41D2F429600F9E815 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082919F31D2F429600F9E815 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		082919E71D2A05D800F9E815 /* Hashjson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Hashjson.txt; sourceTree = "<group>"; };
 		082919EF1D2CA69700F9E815 /* Star Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star Filled-50.png"; sourceTree = "<group>"; };
 		082919F11D2CA6A000F9E815 /* Star-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Star-50.png"; sourceTree = "<group>"; };
+		082919F31D2F429600F9E815 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 				082919E71D2A05D800F9E815 /* Hashjson.txt */,
 				082919E31D2A056200F9E815 /* Stringjson.txt */,
 				082919E11D29F61700F9E815 /* json.txt */,
+				082919F31D2F429600F9E815 /* HistoryViewController.swift */,
 				082919DB1D2909DC00F9E815 /* MethodExplanetionViewController.swift */,
 				082919D71D29097900F9E815 /* BookMarksViewController.swift */,
 				082919D51D29095000F9E815 /* choiceMethodViewController.swift */,
@@ -298,6 +301,7 @@
 				082919A61D29007A00F9E815 /* AppDelegate.swift in Sources */,
 				082919D81D29097900F9E815 /* BookMarksViewController.swift in Sources */,
 				082919D41D29092500F9E815 /* choiceModuleViewController.swift in Sources */,
+				082919F41D2F429600F9E815 /* HistoryViewController.swift in Sources */,
 				082919DC1D2909DC00F9E815 /* MethodExplanetionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
