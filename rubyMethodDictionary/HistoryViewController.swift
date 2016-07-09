@@ -25,7 +25,9 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         var addDomain:String = NSBundle.mainBundle().bundleIdentifier!
         
         var myDefault = NSUserDefaults.standardUserDefaults()
+        if myDefault.objectForKey("HistoryList") != nil{
             HistoryList = myDefault.objectForKey("HistoryList")as! [Dictionary]
+        }
         //          myDefault.removePersistentDomainForName(addDomain)
         HistoryList = HistoryList.reverse()
         HistoryTableView.reloadData()
@@ -48,7 +50,6 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         // キャンセルボタン
         let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:{
             (action: UIAlertAction!) -> Void in
-            print("Cancel")
         })
         
         alert.addAction(cancelAction)
@@ -79,10 +80,10 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "HistorySegue" {
-            var BookMarkDetailVC = segue.destinationViewController as! MethodExplanetionViewController
-            BookMarkDetailVC.methodClass = HistoryList[selectedIndex]["class"] as! String!
-            BookMarkDetailVC.methodName = HistoryList[selectedIndex]["name"] as! String!
-            BookMarkDetailVC.methodText = HistoryList[selectedIndex]["detail"]
+            var HistoryDetailVC = segue.destinationViewController as! MethodExplanetionViewController
+            HistoryDetailVC.methodClass = HistoryList[selectedIndex]["class"] as! String!
+            HistoryDetailVC.methodName = HistoryList[selectedIndex]["name"] as! String!
+            HistoryDetailVC.methodText = HistoryList[selectedIndex]["detail"]
                 as! String!
         }
     }

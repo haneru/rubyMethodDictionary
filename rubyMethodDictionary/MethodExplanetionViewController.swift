@@ -31,9 +31,25 @@ class MethodExplanetionViewController: UIViewController {
         
         var myDefault = NSUserDefaults.standardUserDefaults()
         
-        HistoryList = myDefault.objectForKey("HistoryList")as! [Dictionary]
+        if myDefault.objectForKey("HistoryList") != nil{
+            HistoryList = myDefault.objectForKey("HistoryList")as!  [Dictionary]
+            HistoryList.append(["class":methodClass as String,"name":methodName ,"detail":methodText ])
+        }
         
-        HistoryList.append(["class":methodClass,"name":methodName,"detail":methodText])
+        if myDefault.objectForKey("bookMarkList") != nil{
+            bookMarkList = myDefault.objectForKey("bookMarkList")as! [Dictionary]
+            //            myDefault.removePersistentDomainForName(addDomain)
+        }
+        
+        for value in bookMarkList {
+            if value == ["class":self.methodClass,"name":self.methodName,"detail":self.methodText] {
+                favoriteImage.image = UIImage(named: "Star Filled-50.png")
+                break
+            }else{
+                favoriteImage.image = UIImage(named: "Star-50.png")
+            }
+        }
+        
         myDefault.setObject(self.HistoryList, forKey: "HistoryList")
         myDefault.synchronize()
             
@@ -46,26 +62,6 @@ class MethodExplanetionViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         nameLavel.text = methodName
         detailText.text = methodText
-        var addDomain:String = NSBundle.mainBundle().bundleIdentifier!
-        
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        
-        
-
-        if myDefault.objectForKey("bookMarkList") != nil{
-            bookMarkList = myDefault.objectForKey("bookMarkList")as! [Dictionary]
-//            myDefault.removePersistentDomainForName(addDomain)
-        }
-    
-        for value in bookMarkList {
-            if value == ["class":self.methodClass,"name":self.methodName,"detail":self.methodText] {
-                favoriteImage.image = UIImage(named: "Star Filled-50.png")
-                break
-            }else{
-            favoriteImage.image = UIImage(named: "Star-50.png")
-            }
-        }
-        
         // Do any additional setup after loading the view.
     }
     @IBAction func tapFavorite(sender: UITapGestureRecognizer) {
