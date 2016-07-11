@@ -16,9 +16,9 @@ class MethodExplanetionViewController: UIViewController {
     
     var methodText:String!
     
-    var bookMarkList = [["class":"","name":"","detail":""]]
+    var bookMarkList:[Dictionary<String,String>] = []
     
-    var HistoryList = [["class":"","name":"","detail":""]]
+    var HistoryList:[Dictionary<String,String>] = []
     
     @IBOutlet weak var nameLavel: UILabel!
     
@@ -48,6 +48,11 @@ class MethodExplanetionViewController: UIViewController {
             }else{
                 favoriteImage.image = UIImage(named: "Star-50.png")
             }
+            
+        }
+        if bookMarkList == []{
+            favoriteImage.image = UIImage(named: "Star-50.png")
+            
         }
         
         myDefault.setObject(self.HistoryList, forKey: "HistoryList")

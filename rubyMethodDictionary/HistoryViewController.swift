@@ -11,7 +11,7 @@ import UIKit
 class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     @IBOutlet weak var HistoryTableView: UITableView!
 
-    var HistoryList = [["class":"","name":"","detail":""]]
+    var HistoryList:[Dictionary<String,String>] = []
     
     var selectedIndex = -1
     
@@ -37,7 +37,7 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         
         let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
             (action: UIAlertAction!) -> Void in
-            self.HistoryList = [["class":"","name":"","detail":""]]
+            self.HistoryList = []
             //        UserDefaultに保存
             var myDefault = NSUserDefaults.standardUserDefaults()
             //        データを書き込んで

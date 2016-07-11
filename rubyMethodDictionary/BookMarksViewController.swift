@@ -10,7 +10,7 @@ import UIKit
 
 class BookMarksViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
 
-    var bookMarkList = [["class":"","name":"","detail":""]]
+    var bookMarkList:[Dictionary<String,String>] = []
     
     var selectedIndex = -1
     
@@ -23,7 +23,7 @@ class BookMarksViewController: UIViewController,UITableViewDelegate,UITableViewD
         
         let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
             (action: UIAlertAction!) -> Void in
-            self.bookMarkList = [["class":"","name":"","detail":""]]
+            self.bookMarkList = []
             //        UserDefaultに保存
             var myDefault = NSUserDefaults.standardUserDefaults()
             //        データを書き込んで
