@@ -34,19 +34,19 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="メソッド" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIS-2q-1eh">
-                                <rect key="frame" x="69" y="191" width="183" height="94"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="辞典" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qq9-Fb-0fi">
+                                <rect key="frame" x="69" y="334" width="183" height="96"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="94" id="S9c-g6-hSn"/>
+                                    <constraint firstAttribute="height" constant="96" id="ptg-AG-SDX"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="辞典" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qq9-Fb-0fi">
-                                <rect key="frame" x="69" y="334" width="183" height="96"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="メソッド" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIS-2q-1eh">
+                                <rect key="frame" x="69" y="190" width="183" height="94"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="96" id="ptg-AG-SDX"/>
+                                    <constraint firstAttribute="height" constant="94" id="S9c-g6-hSn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,9 +62,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1xp-T1-JFD" secondAttribute="bottom" constant="100" id="R9m-j2-9hg"/>
                             <constraint firstItem="cnT-xI-ncu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="53" id="XVc-ym-HDp"/>
                             <constraint firstItem="1xp-T1-JFD" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="100" id="e7g-hC-kLA"/>
-                            <constraint firstItem="Qq9-Fb-0fi" firstAttribute="centerX" secondItem="1xp-T1-JFD" secondAttribute="centerX" id="fqt-4Z-xW9"/>
                             <constraint firstItem="pIS-2q-1eh" firstAttribute="leading" secondItem="Qq9-Fb-0fi" secondAttribute="leading" id="hdE-ib-2Cq"/>
-                            <constraint firstItem="cnT-xI-ncu" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="45" id="iI6-c4-4j2"/>
                             <constraint firstItem="Qq9-Fb-0fi" firstAttribute="top" secondItem="pIS-2q-1eh" secondAttribute="bottom" constant="22" id="xOE-gx-VES"/>
                             <constraint firstItem="cnT-xI-ncu" firstAttribute="trailing" secondItem="pIS-2q-1eh" secondAttribute="trailing" id="xjh-d4-ZMD"/>
                             <constraint firstItem="pIS-2q-1eh" firstAttribute="trailing" secondItem="Qq9-Fb-0fi" secondAttribute="trailing" id="yVu-6N-md2"/>
@@ -74,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="440" y="429"/>
+            <point key="canvasLocation" x="871" y="429"/>
         </scene>
         <!--Choice Module View Controller-->
         <scene sceneID="EJf-eO-l1E">
@@ -88,12 +86,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="どのクラス？" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcX-pt-bQy">
+                                <rect key="frame" x="109" y="96" width="102" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="fMa-zx-BaG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CcQ-X2-5E9">
                                 <rect key="frame" x="0.0" y="150" width="320" height="369"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="oX3-Ip-aaV">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oX3-Ip-aaV" id="7qe-X3-9kT">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
@@ -109,21 +116,15 @@
                                     <outlet property="delegate" destination="NWR-Z5-K4U" id="I5K-88-sGz"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="どのクラス？" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dcX-pt-bQy">
-                                <rect key="frame" x="109" y="96" width="102" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="CcQ-X2-5E9" firstAttribute="leading" secondItem="cgZ-6r-SO9" secondAttribute="leadingMargin" id="IV7-ak-U9T"/>
-                            <constraint firstItem="dcX-pt-bQy" firstAttribute="leading" secondItem="cgZ-6r-SO9" secondAttribute="leadingMargin" constant="90" id="M1o-V4-BzB"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dcX-pt-bQy" secondAttribute="trailing" constant="90" id="WXW-3M-DPK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dcX-pt-bQy" secondAttribute="trailing" constant="80" id="Wa2-cP-LpA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="CcQ-X2-5E9" secondAttribute="trailing" id="ccG-sJ-6DY"/>
                             <constraint firstItem="eLH-VF-a3J" firstAttribute="top" secondItem="CcQ-X2-5E9" secondAttribute="bottom" id="poO-Mg-Ssl"/>
                             <constraint firstItem="dcX-pt-bQy" firstAttribute="top" secondItem="Jd9-Ft-3xH" secondAttribute="bottom" constant="28" id="rpL-LA-eRq"/>
+                            <constraint firstItem="dcX-pt-bQy" firstAttribute="leading" secondItem="cgZ-6r-SO9" secondAttribute="leadingMargin" constant="80" id="wJW-GD-f2f"/>
                             <constraint firstItem="CcQ-X2-5E9" firstAttribute="top" secondItem="dcX-pt-bQy" secondAttribute="bottom" constant="28" id="zcD-0G-dXn"/>
                         </constraints>
                     </view>
@@ -131,7 +132,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cCV-AQ-uSi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2472" y="429"/>
+            <point key="canvasLocation" x="2035" y="429"/>
         </scene>
         <!--Choice Method View Controller-->
         <scene sceneID="4qb-Yy-Clq">
@@ -200,7 +201,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3083" y="429"/>
+            <point key="canvasLocation" x="2035" y="1105"/>
         </scene>
         <!--Method Explanetion View Controller-->
         <scene sceneID="3At-pi-hNJ">
@@ -243,7 +244,10 @@
                             <constraint firstItem="UAg-8q-czJ" firstAttribute="top" secondItem="AEf-0o-TB4" secondAttribute="bottom" constant="10" id="9vb-j2-29w"/>
                             <constraint firstItem="WwG-KO-y88" firstAttribute="top" secondItem="r3e-nU-0w7" secondAttribute="bottom" constant="35" id="FP8-bE-Jcg"/>
                             <constraint firstItem="WwG-KO-y88" firstAttribute="leading" secondItem="Mrb-Xu-LRd" secondAttribute="leadingMargin" id="PgH-NI-Nvp"/>
+                            <constraint firstItem="W3V-uU-5PB" firstAttribute="top" secondItem="UAg-8q-czJ" secondAttribute="bottom" constant="20" id="UVU-fs-DjD"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UAg-8q-czJ" secondAttribute="trailing" constant="20" id="Ytp-DV-gyX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WwG-KO-y88" secondAttribute="trailing" id="gog-wL-80C"/>
+                            <constraint firstItem="UAg-8q-czJ" firstAttribute="leading" secondItem="Mrb-Xu-LRd" secondAttribute="leadingMargin" constant="20" id="h68-Pr-IFZ"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="OQr-Zl-0hB" appends="YES" id="0yO-Hv-dYj"/>
@@ -269,7 +273,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3083" y="1387"/>
+            <point key="canvasLocation" x="2035" y="1784"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ao8-qg-K8g">
@@ -288,7 +292,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o2t-5y-XeO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127" y="429"/>
+            <point key="canvasLocation" x="1266" y="429"/>
         </scene>
         <!--Book Marks View Controller-->
         <scene sceneID="nam-fP-Zyh">
@@ -308,7 +312,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOS-2Q-f3c">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOS-2Q-f3c">
                                 <rect key="frame" x="246" y="96" width="62" height="30"/>
                                 <state key="normal" title="AllDelete"/>
                                 <connections>
@@ -340,6 +344,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="hjh-2i-ICN" secondAttribute="trailing" constant="100" id="6s4-DE-FPY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZOS-2Q-f3c" secondAttribute="trailing" id="Jr2-Zx-bDw"/>
                             <constraint firstItem="d4q-DP-z3e" firstAttribute="leading" secondItem="jPK-eP-Izd" secondAttribute="leadingMargin" id="OSY-Wo-cGm"/>
                             <constraint firstItem="d4q-DP-z3e" firstAttribute="top" secondItem="hjh-2i-ICN" secondAttribute="bottom" constant="25" id="PNe-Dd-7iQ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="d4q-DP-z3e" secondAttribute="trailing" id="TN9-4t-2Kq"/>
@@ -355,7 +360,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Obf-Fb-Pnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2472" y="1387"/>
+            <point key="canvasLocation" x="1652" y="1105"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="LFf-PI-eLJ">
@@ -375,7 +380,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKb-Kn-43Q">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NKb-Kn-43Q">
                                 <rect key="frame" x="246" y="94" width="62" height="30"/>
                                 <state key="normal" title="AllDelete"/>
                                 <connections>
@@ -408,6 +413,7 @@
                         <constraints>
                             <constraint firstItem="LcO-dj-6Yv" firstAttribute="leading" secondItem="lBc-0R-5PP" secondAttribute="leadingMargin" id="BWt-Vu-qhM"/>
                             <constraint firstItem="PgG-lz-ktQ" firstAttribute="top" secondItem="LcO-dj-6Yv" secondAttribute="bottom" id="Fy5-W0-GmO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NKb-Kn-43Q" secondAttribute="trailing" id="Pc8-7Z-hXn"/>
                             <constraint firstItem="LcO-dj-6Yv" firstAttribute="leading" secondItem="lBc-0R-5PP" secondAttribute="leadingMargin" id="cAV-YI-HeN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LcO-dj-6Yv" secondAttribute="trailing" id="cPK-VV-Gfz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LcO-dj-6Yv" secondAttribute="trailing" id="iNn-Ha-gUj"/>
@@ -421,7 +427,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAj-1b-sOv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2472" y="2172"/>
+            <point key="canvasLocation" x="1652" y="1784"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jfi-u7-qvi">
@@ -440,7 +446,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="97T-lH-Zmo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="429"/>
+            <point key="canvasLocation" x="1652" y="429"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="OfG-O6-hVw">
@@ -459,7 +465,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tzH-Z8-Ovs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="1387"/>
+            <point key="canvasLocation" x="1266" y="1105"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y2c-jR-gJ6">
@@ -478,7 +484,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9z-CE-MWo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1846" y="2172"/>
+            <point key="canvasLocation" x="1266" y="1784"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
