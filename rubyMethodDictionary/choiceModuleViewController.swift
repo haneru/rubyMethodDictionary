@@ -7,40 +7,74 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class choiceModuleViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
+class choiceModuleViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,GADBannerViewDelegate{
     
     var selectedIndex = -1
     
-    var classArray = []
+    var classArray = [String]()
+    
+    let AdMobID = "ca-app-pub-3530000000000000/0123456789"
+    let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
+    let AdMobTest:Bool = true
+    let SimulatorTest:Bool = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var admobView: GADBannerView = GADBannerView()
+        admobView = GADBannerView(adSize:kGADAdSizeBanner)
+        admobView.frame.origin = CGPoint(x: 0, y: self.view.frame.size.height - 44 - admobView.frame.height)
+        
+        admobView.frame.size = CGSize(width: self.view.frame.width, height: admobView.frame.height)
+        admobView.adUnitID = AdMobID
+        admobView.delegate = self
+        admobView.rootViewController = self
+        
+        let admobRequest:GADRequest = GADRequest()
+        
+        if AdMobTest {
+            if SimulatorTest {
+                admobRequest.testDevices = [kGADSimulatorID]
+            }
+            else {
+                admobRequest.testDevices = ["539680c1269c77bd2123b573469fbcca"]
+            }
+            
+        }
+        
+        admobView.load(admobRequest)
+        
+        self.view.addSubview(admobView)
+    
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(animated: Bool) {
-        var path = NSBundle.mainBundle().pathForResource("json", ofType: "txt")
-        var jsondata = NSData(contentsOfFile: path!)
+    override func viewWillAppear(_ animated: Bool) {
+        let path = Bundle.main.path(forResource: "json", ofType: "txt")
+        let jsondata = try? Data(contentsOf: URL(fileURLWithPath: path!))
         
-        let jsonArray = (try!NSJSONSerialization.JSONObjectWithData(jsondata!, options: [])) as! NSArray
-        classArray = jsonArray
+        let jsonArray = (try!JSONSerialization.jsonObject(with: jsondata!, options: [])) as! NSArray
+        classArray = jsonArray as! [String] 
 
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return classArray.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         cell.textLabel!.text = "\(classArray[indexPath.row])"
+        cell.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        cell.textLabel!.textColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha: 1.0)
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
-        performSegueWithIdentifier("MethodSegue", sender: nil)
+        performSegue(withIdentifier: "MethodSegue", sender: nil)
         
     }
 
@@ -49,9 +83,9 @@ class choiceModuleViewController: UIViewController,UITableViewDelegate,UITableVi
         // Dispose of any resources that can be recreated.
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MethodSegue" {
-        var choiceMethodVC = segue.destinationViewController as! choiceMethodViewController
+        let choiceMethodVC = segue.destination as! choiceMethodViewController
             choiceMethodVC.className = classArray[selectedIndex] as! String
         }
     }

@@ -1,0 +1,3 @@
+[
+{"class":"Integer","name":"times","detail":"timesメソッドは引数"の回数分繰り返しを行うメソッドです。ブロック引数を入れれば０から始まり、繰り返しの回数ごとにブロック引数＋１されていきます。\n\nexample\n\nn = 5\n\nn.times do |i|\n puts i\nend\n\n出力結果\n\n0\n1\n2\n3\n4}
+]

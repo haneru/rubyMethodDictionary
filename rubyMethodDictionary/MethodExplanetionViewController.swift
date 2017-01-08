@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class MethodExplanetionViewController: UIViewController {
+class MethodExplanetionViewController: UIViewController ,GADBannerViewDelegate{
 
     var methodClass:String!
     
@@ -20,6 +21,14 @@ class MethodExplanetionViewController: UIViewController {
     
     var HistoryList:[Dictionary<String,String>] = []
     
+    var contentOffset = CGPoint.zero
+    
+    let AdMobID = "ca-app-pub-3530000000000000/0123456789"
+    let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
+    let AdMobTest:Bool = true
+    let SimulatorTest:Bool = true
+
+    
     @IBOutlet weak var nameLavel: UILabel!
     
     @IBOutlet weak var detailText: UITextView!
@@ -27,17 +36,46 @@ class MethodExplanetionViewController: UIViewController {
     @IBOutlet weak var favoriteImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var addDomain:String = NSBundle.mainBundle().bundleIdentifier!
+//        広告実装
+        var admobView: GADBannerView = GADBannerView()
+        admobView = GADBannerView(adSize:kGADAdSizeBanner)
+        admobView.frame.origin = CGPoint(x: 0, y: self.view.frame.size.height - 44 - admobView.frame.height)
         
-        var myDefault = NSUserDefaults.standardUserDefaults()
+        admobView.frame.size = CGSize(width: self.view.frame.width, height: admobView.frame.height)
+        admobView.adUnitID = AdMobID
+        admobView.delegate = self
+        admobView.rootViewController = self
         
-        if myDefault.objectForKey("HistoryList") != nil{
-            HistoryList = myDefault.objectForKey("HistoryList")as!  [Dictionary]
+        let admobRequest:GADRequest = GADRequest()
+        
+        if AdMobTest {
+            if SimulatorTest {
+                admobRequest.testDevices = [kGADSimulatorID]
+            }
+            else {
+                admobRequest.testDevices = ["539680c1269c77bd2123b573469fbcca" ]
+            }
+            
+        }
+        
+        admobView.load(admobRequest)
+        
+        self.view.addSubview(admobView)
+
+        
+        
+//        ユーザーデフォルト
+        var addDomain:String = Bundle.main.bundleIdentifier!
+        
+        var myDefault = UserDefaults.standard
+        
+        if myDefault.object(forKey: "HistoryList") != nil{
+            HistoryList = myDefault.object(forKey: "HistoryList")as!  [Dictionary]
             HistoryList.append(["class":methodClass as String,"name":methodName ,"detail":methodText ])
         }
         
-        if myDefault.objectForKey("bookMarkList") != nil{
-            bookMarkList = myDefault.objectForKey("bookMarkList")as! [Dictionary]
+        if myDefault.object(forKey: "bookMarkList") != nil{
+            bookMarkList = myDefault.object(forKey: "bookMarkList")as! [Dictionary]
             //            myDefault.removePersistentDomainForName(addDomain)
         }
         
@@ -50,26 +88,26 @@ class MethodExplanetionViewController: UIViewController {
             }
             
         }
-        if bookMarkList == []{
-            favoriteImage.image = UIImage(named: "Star-50.png")
+        if bookMarkList.isEmpty{
+            self.favoriteImage.image = UIImage(named: "Star-50.png")
             
         }
         
-        myDefault.setObject(self.HistoryList, forKey: "HistoryList")
+        myDefault.set(self.HistoryList, forKey: "HistoryList")
         myDefault.synchronize()
             
     }
-    @IBAction func swipeRight(sender: UISwipeGestureRecognizer) {
-        navigationController?.popViewControllerAnimated(true)
+    @IBAction func swipeRight(_ sender: UISwipeGestureRecognizer) {
+        navigationController?.popViewController(animated: true)
     }
     
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         nameLavel.text = methodName
         detailText.text = methodText
         // Do any additional setup after loading the view.
     }
-    @IBAction func tapFavorite(sender: UITapGestureRecognizer) {
+    @IBAction func tapFavorite(_ sender: UITapGestureRecognizer) {
         if self.favoriteImage.image == UIImage(named: "Star-50.png"){
             self.bookMarkList.append(["class":self.methodClass,"name":self.methodName,"detail":self.methodText])
             favoriteImage.image = UIImage(named: "Star Filled-50.png")
@@ -78,7 +116,7 @@ class MethodExplanetionViewController: UIViewController {
             var i = 0
             for value in self.bookMarkList{
                 if value == ["class":"\(methodClass)","name":"\(methodName)","detail":"\(methodText)"]{
-                    self.bookMarkList.removeAtIndex(i)
+                    self.bookMarkList.remove(at: i)
                     break
                 }
                 i += 1
@@ -86,9 +124,9 @@ class MethodExplanetionViewController: UIViewController {
         }
 //        print(self.bookMarkList)
         //        UserDefaultに保存
-        var myDefault = NSUserDefaults.standardUserDefaults()
+        var myDefault = UserDefaults.standard
         //        データを書き込んで
-        myDefault.setObject(self.bookMarkList, forKey: "bookMarkList")
+        myDefault.set(self.bookMarkList, forKey: "bookMarkList")
         //        即反映させる
         myDefault.synchronize()
     }
@@ -97,8 +135,17 @@ class MethodExplanetionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        detailText.contentOffset = contentOffset //set
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        contentOffset = detailText.contentOffset //keep
+    }
+    
+   /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

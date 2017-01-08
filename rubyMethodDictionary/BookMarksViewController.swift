@@ -7,34 +7,66 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class BookMarksViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class BookMarksViewController: UIViewController,UITableViewDelegate,UITableViewDataSource ,GADBannerViewDelegate{
 
     var bookMarkList:[Dictionary<String,String>] = []
     
     var selectedIndex = -1
     
+    let AdMobID = "ca-app-pub-3530000000000000/0123456789"
+    let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
+    let AdMobTest:Bool = true
+    let SimulatorTest:Bool = true
+
+    
     @IBOutlet weak var BookMarksTableView: UITableView!
     override func viewDidLoad() {
+        var admobView: GADBannerView = GADBannerView()
+        admobView = GADBannerView(adSize:kGADAdSizeBanner)
+        admobView.frame.origin = CGPoint(x: 0, y: self.view.frame.size.height - 44 - admobView.frame.height)
+        
+        admobView.frame.size = CGSize(width: self.view.frame.width, height: admobView.frame.height)
+        admobView.adUnitID = AdMobID
+        admobView.delegate = self
+        admobView.rootViewController = self
+        
+        let admobRequest:GADRequest = GADRequest()
+        
+        if AdMobTest {
+            if SimulatorTest {
+                admobRequest.testDevices = [kGADSimulatorID]
+            }
+            else {
+                admobRequest.testDevices = ["539680c1269c77bd2123b573469fbcca" ]
+            }
+            
+        }
+        
+        admobView.load(admobRequest)
+        
+        self.view.addSubview(admobView)
+
         // Do any additional setup after loading the view.
     }
-    @IBAction func allDelete(sender: UIButton) {
-        let alert: UIAlertController = UIAlertController(title: "AllDelete", message: "全部をBookMarkから削除しますか？？", preferredStyle:  UIAlertControllerStyle.Alert)
+    @IBAction func allDelete(_ sender: UIButton) {
+        let alert: UIAlertController = UIAlertController(title: "AllDelete", message: "全部をBookMarkから削除しますか？？", preferredStyle:  UIAlertControllerStyle.alert)
         
-        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler:{
+        let defaultAction: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler:{
             (action: UIAlertAction!) -> Void in
             self.bookMarkList = []
             //        UserDefaultに保存
-            var myDefault = NSUserDefaults.standardUserDefaults()
+            var myDefault = UserDefaults.standard
             //        データを書き込んで
-            myDefault.setObject(self.bookMarkList, forKey: "bookMarkList")
+            myDefault.set(self.bookMarkList, forKey: "bookMarkList")
             //        即反映させる
             myDefault.synchronize()
             
             self.BookMarksTableView.reloadData()
         })
         // キャンセルボタン
-        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Cancel, handler:{
+        let cancelAction: UIAlertAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.cancel, handler:{
             (action: UIAlertAction!) -> Void in
             print("Cancel")
         })
@@ -42,44 +74,46 @@ class BookMarksViewController: UIViewController,UITableViewDelegate,UITableViewD
         alert.addAction(cancelAction)
         alert.addAction(defaultAction)
         
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidLoad()
-        var addDomain:String = NSBundle.mainBundle().bundleIdentifier!
+        var addDomain:String = Bundle.main.bundleIdentifier!
         
-        var myDefault = NSUserDefaults.standardUserDefaults()
-        if myDefault.objectForKey("bookMarkList") != nil{
-            bookMarkList = myDefault.objectForKey("bookMarkList")as! [Dictionary]
+        var myDefault = UserDefaults.standard
+        if myDefault.object(forKey: "bookMarkList") != nil{
+            bookMarkList = myDefault.object(forKey: "bookMarkList")as! [Dictionary]
         }
 //          myDefault.removePersistentDomainForName(addDomain)
         BookMarksTableView.reloadData()
         
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bookMarkList.count
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = UITableViewCell(style: .Default, reuseIdentifier: "cell")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         if bookMarkList[indexPath.row]["class"] != "" && bookMarkList[indexPath.row]["name"] != ""{
             cell.textLabel!.text = "Class:\(bookMarkList[indexPath.row]["class"] as! String!),Method:\(bookMarkList[indexPath.row]["name"] as! String!)"
         }
+        cell.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
+        cell.textLabel!.textColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha: 1.0)
         return cell
     }
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
         if bookMarkList[indexPath.row]["class"] != "" && bookMarkList[indexPath.row]["name"] != ""{
-        performSegueWithIdentifier("bookmarkMethodSegue", sender: nil)
+        performSegue(withIdentifier: "bookmarkMethodSegue", sender: nil)
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "bookmarkMethodSegue" {
-            var BookMarkDetailVC = segue.destinationViewController as! MethodExplanetionViewController
+            var BookMarkDetailVC = segue.destination as! MethodExplanetionViewController
             BookMarkDetailVC.methodClass = bookMarkList[selectedIndex]["class"] as! String!
             BookMarkDetailVC.methodName = bookMarkList[selectedIndex]["name"] as! String!
             BookMarkDetailVC.methodText = bookMarkList[selectedIndex]["detail"]
