@@ -71,7 +71,7 @@ class MethodExplanetionViewController: UIViewController ,GADBannerViewDelegate{
         
         if myDefault.object(forKey: "HistoryList") != nil{
             HistoryList = myDefault.object(forKey: "HistoryList")as!  [Dictionary]
-            HistoryList.append(["class":methodClass as String,"name":methodName ,"detail":methodText ])
+            HistoryList.append(["class":methodClass! as String,"name":methodName! ,"detail":methodText! ])
         }
         
         if myDefault.object(forKey: "bookMarkList") != nil{
@@ -109,13 +109,13 @@ class MethodExplanetionViewController: UIViewController ,GADBannerViewDelegate{
     }
     @IBAction func tapFavorite(_ sender: UITapGestureRecognizer) {
         if self.favoriteImage.image == UIImage(named: "Star-50.png"){
-            self.bookMarkList.append(["class":self.methodClass,"name":self.methodName,"detail":self.methodText])
+            self.bookMarkList.append(["class":self.methodClass!,"name":self.methodName!,"detail":self.methodText!])
             favoriteImage.image = UIImage(named: "Star Filled-50.png")
         }else{
             self.favoriteImage.image = UIImage(named: "Star-50.png")
             var i = 0
             for value in self.bookMarkList{
-                if value == ["class":"\(methodClass)","name":"\(methodName)","detail":"\(methodText)"]{
+                if value == ["class":"\(methodClass!)","name":"\(methodName!)","detail":"\(methodText!)"]{
                     self.bookMarkList.remove(at: i)
                     break
                 }
@@ -124,7 +124,7 @@ class MethodExplanetionViewController: UIViewController ,GADBannerViewDelegate{
         }
 //        print(self.bookMarkList)
         //        UserDefaultに保存
-        var myDefault = UserDefaults.standard
+        let myDefault = UserDefaults.standard
         //        データを書き込んで
         myDefault.set(self.bookMarkList, forKey: "bookMarkList")
         //        即反映させる

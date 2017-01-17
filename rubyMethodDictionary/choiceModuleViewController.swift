@@ -13,7 +13,7 @@ class choiceModuleViewController: UIViewController,UITableViewDelegate,UITableVi
     
     var selectedIndex = -1
     
-    var classArray = [String]()
+    var classArray:[String] = []
     
     let AdMobID = "ca-app-pub-3530000000000000/0123456789"
     let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
@@ -56,7 +56,7 @@ class choiceModuleViewController: UIViewController,UITableViewDelegate,UITableVi
         let jsondata = try? Data(contentsOf: URL(fileURLWithPath: path!))
         
         let jsonArray = (try!JSONSerialization.jsonObject(with: jsondata!, options: [])) as! NSArray
-        classArray = jsonArray as! [String] 
+        classArray = jsonArray as! [String]
 
     }
 
@@ -74,8 +74,7 @@ class choiceModuleViewController: UIViewController,UITableViewDelegate,UITableVi
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedIndex = indexPath.row
-        performSegue(withIdentifier: "MethodSegue", sender: nil)
-        
+        performSegue(withIdentifier: "MethodSegue",sender: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,7 +85,7 @@ class choiceModuleViewController: UIViewController,UITableViewDelegate,UITableVi
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "MethodSegue" {
         let choiceMethodVC = segue.destination as! choiceMethodViewController
-            choiceMethodVC.className = classArray[selectedIndex] as! String
+        choiceMethodVC.className = classArray[selectedIndex]        
         }
     }
     

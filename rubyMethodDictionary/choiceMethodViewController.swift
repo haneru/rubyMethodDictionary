@@ -15,7 +15,7 @@ class choiceMethodViewController: UIViewController ,UITableViewDelegate,UITableV
     
     var className: String!
     
-    var methodArray = [Dictionary<String, Any>]()
+    var methodArray:[Dictionary<String, Any>] = []
     
     let AdMobID = "ca-app-pub-3530000000000000/0123456789"
     let TEST_DEVICE_ID = "61b0154xxxxxxxxxxxxxxxxxxxxxxxe0"
@@ -26,7 +26,7 @@ class choiceMethodViewController: UIViewController ,UITableViewDelegate,UITableV
     @IBOutlet weak var quesLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        quesLabel.text = "\(className)"
+        quesLabel.text = "\(className!)"
         
 //        広告実装
         var admobView: GADBannerView = GADBannerView()
@@ -62,10 +62,11 @@ class choiceMethodViewController: UIViewController ,UITableViewDelegate,UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let path = Bundle.main.path(forResource: "\(className)json", ofType: "txt")
+        let path = Bundle.main.path(forResource: "\(className!)json", ofType: "txt")
         let jsondata = try? Data(contentsOf: URL(fileURLWithPath: path!))
         
         let jsonArray = (try!JSONSerialization.jsonObject(with: jsondata!, options: [])) as! NSArray
+        
         methodArray = jsonArray as! [Dictionary<String, Any>]
     }
     
