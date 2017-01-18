@@ -97,7 +97,7 @@ class BookMarksViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         if bookMarkList[indexPath.row]["class"] != "" && bookMarkList[indexPath.row]["name"] != ""{
-            cell.textLabel!.text = "Class:\(bookMarkList[indexPath.row]["class"] as! String!),Method:\(bookMarkList[indexPath.row]["name"] as! String!)"
+            cell.textLabel!.text = "Class:\(bookMarkList[indexPath.row]["class"]!),Method:\(bookMarkList[indexPath.row]["name"]!)"
         }
         cell.backgroundColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 1.0)
         cell.textLabel!.textColor = UIColor(red:1.0,green:0.3,blue:0.3,alpha: 1.0)
